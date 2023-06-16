@@ -15,7 +15,15 @@ namespace Bibliotheksverleih.UI
 
         private void btn_AddWriter_Click(object sender, EventArgs e)
         {
-            
+            conn.AddWriter(txtFirstName.Text, txtLastName.Text);
+
+            EmptyTextBoxes();
+        }
+
+        public void EmptyTextBoxes()
+        {
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
         }
     }
 }
