@@ -1,6 +1,6 @@
 ﻿namespace Bibliotheksverleih.Data;
 
-public class DeleteQueries
+public class DeleteDbData
 {
 
 }
