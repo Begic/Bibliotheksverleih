@@ -33,7 +33,7 @@
             tabPage4 = new TabPage();
             btn_Search = new Button();
             label9 = new Label();
-            textBox2 = new TextBox();
+            txtSearch = new TextBox();
             panel5 = new Panel();
             dataGridView1 = new DataGridView();
             tabPage1 = new TabPage();
@@ -66,6 +66,11 @@
             label6 = new Label();
             txtTitel = new TextBox();
             txtISBN = new TextBox();
+            tabPage5 = new TabPage();
+            panel6 = new Panel();
+            dataGridView2 = new DataGridView();
+            btn_DeleteStock = new Button();
+            btn_AddStock = new Button();
             panel1.SuspendLayout();
             btn_DeleteGenres.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -80,6 +85,9 @@
             tabPage3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridBook).BeginInit();
+            tabPage5.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -96,6 +104,7 @@
             btn_DeleteGenres.Controls.Add(tabPage4);
             btn_DeleteGenres.Controls.Add(tabPage1);
             btn_DeleteGenres.Controls.Add(tapPage2);
+            btn_DeleteGenres.Controls.Add(tabPage5);
             btn_DeleteGenres.Controls.Add(tabPage3);
             btn_DeleteGenres.Dock = DockStyle.Fill;
             btn_DeleteGenres.Location = new Point(0, 0);
@@ -108,7 +117,7 @@
             // 
             tabPage4.Controls.Add(btn_Search);
             tabPage4.Controls.Add(label9);
-            tabPage4.Controls.Add(textBox2);
+            tabPage4.Controls.Add(txtSearch);
             tabPage4.Controls.Add(panel5);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
@@ -136,12 +145,12 @@
             label9.TabIndex = 2;
             label9.Text = "Suche:";
             // 
-            // textBox2
+            // txtSearch
             // 
-            textBox2.Location = new Point(65, 14);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(635, 27);
-            textBox2.TabIndex = 1;
+            txtSearch.Location = new Point(65, 14);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(635, 27);
+            txtSearch.TabIndex = 1;
             // 
             // panel5
             // 
@@ -452,6 +461,55 @@
             txtISBN.Size = new Size(400, 27);
             txtISBN.TabIndex = 5;
             // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(btn_DeleteStock);
+            tabPage5.Controls.Add(btn_AddStock);
+            tabPage5.Controls.Add(panel6);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(834, 590);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Stock";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(dataGridView2);
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(834, 430);
+            panel6.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Dock = DockStyle.Fill;
+            dataGridView2.Location = new Point(0, 0);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(834, 430);
+            dataGridView2.TabIndex = 0;
+            // 
+            // btn_DeleteStock
+            // 
+            btn_DeleteStock.Location = new Point(426, 553);
+            btn_DeleteStock.Name = "btn_DeleteStock";
+            btn_DeleteStock.Size = new Size(400, 29);
+            btn_DeleteStock.TabIndex = 16;
+            btn_DeleteStock.Text = "Löschen";
+            btn_DeleteStock.UseVisualStyleBackColor = true;
+            // 
+            // btn_AddStock
+            // 
+            btn_AddStock.Location = new Point(8, 553);
+            btn_AddStock.Name = "btn_AddStock";
+            btn_AddStock.Size = new Size(400, 29);
+            btn_AddStock.TabIndex = 15;
+            btn_AddStock.Text = "Hinzufügen/Bearbeiten";
+            btn_AddStock.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -479,6 +537,9 @@
             tabPage3.PerformLayout();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridBook).EndInit();
+            tabPage5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -520,6 +581,11 @@
         private DataGridView dataGridView1;
         private Button btn_Search;
         private Label label9;
-        private TextBox textBox2;
+        private TextBox txtSearch;
+        private TabPage tabPage5;
+        private Panel panel6;
+        private DataGridView dataGridView2;
+        private Button btn_DeleteStock;
+        private Button btn_AddStock;
     }
 }
