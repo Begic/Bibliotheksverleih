@@ -1,4 +1,4 @@
-﻿namespace Bibliotheksverleih.Data;
+﻿namespace Bibliotheksverleih.Data.DataBase;
 
 public class DeleteConnection
 {

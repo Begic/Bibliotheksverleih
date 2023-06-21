@@ -1,10 +1,11 @@
-using Bibliotheksverleih.Data;
+using Bibliotheksverleih.Data.DataBase;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Bibliotheksverleih.UI
 {
     public partial class Form1 : Form
     {
+        private readonly DbData dbData;
         private readonly InsertConnection insertCon;
         private readonly DeleteConnection deleteCon;
 
@@ -14,8 +15,18 @@ namespace Bibliotheksverleih.UI
 
             var connectionString = @"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=Bibliothek; Integrated Security=True";
 
+            dbData = new DbData(connectionString);
             insertCon = new InsertConnection(connectionString);
             deleteCon = new DeleteConnection(connectionString);
+
+            LoadAllDataForDataGrid();
+        }
+
+        private void LoadAllDataForDataGrid()
+        {
+            dataGridWriter.DataSource = dbData.GetAllWriters();
+            dataGridGenres.DataSource = dbData.GetAllGenres();
+            dataGridStock.DataSource = dbData.GetAllStocks();
         }
 
         private void btn_AddWriter_Click(object sender, EventArgs e)

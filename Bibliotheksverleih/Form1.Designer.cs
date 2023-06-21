@@ -35,7 +35,7 @@
             label9 = new Label();
             txtSearch = new TextBox();
             panel5 = new Panel();
-            dataGridView1 = new DataGridView();
+            dataGridOverview = new DataGridView();
             tabPage1 = new TabPage();
             panel2 = new Panel();
             dataGridWriter = new DataGridView();
@@ -54,11 +54,16 @@
             label4 = new Label();
             txtGenres = new TextBox();
             tabPage5 = new TabPage();
+            label12 = new Label();
+            txtPanel = new TextBox();
+            label11 = new Label();
+            txtShelve = new TextBox();
+            label10 = new Label();
             txtLevel = new TextBox();
             btn_DeleteStock = new Button();
             btn_AddStock = new Button();
             panel6 = new Panel();
-            dataGridView2 = new DataGridView();
+            dataGridStock = new DataGridView();
             tabPage3 = new TabPage();
             panel4 = new Panel();
             dataGridBook = new DataGridView();
@@ -72,16 +77,11 @@
             label6 = new Label();
             txtTitel = new TextBox();
             txtISBN = new TextBox();
-            label10 = new Label();
-            txtShelve = new TextBox();
-            label11 = new Label();
-            txtPanel = new TextBox();
-            label12 = new Label();
             panel1.SuspendLayout();
             btn_DeleteGenres.SuspendLayout();
             tabPage4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridOverview).BeginInit();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridWriter).BeginInit();
@@ -90,7 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridGenres).BeginInit();
             tabPage5.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridStock).BeginInit();
             tabPage3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridBook).BeginInit();
@@ -160,22 +160,22 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(dataGridView1);
+            panel5.Controls.Add(dataGridOverview);
             panel5.Location = new Point(0, 48);
             panel5.Name = "panel5";
             panel5.Size = new Size(834, 542);
             panel5.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridOverview
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(834, 542);
-            dataGridView1.TabIndex = 0;
+            dataGridOverview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridOverview.Dock = DockStyle.Fill;
+            dataGridOverview.Location = new Point(0, 0);
+            dataGridOverview.Name = "dataGridOverview";
+            dataGridOverview.RowHeadersWidth = 51;
+            dataGridOverview.RowTemplate.Height = 29;
+            dataGridOverview.Size = new Size(834, 542);
+            dataGridOverview.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -285,7 +285,7 @@
             tapPage2.Padding = new Padding(3);
             tapPage2.Size = new Size(834, 590);
             tapPage2.TabIndex = 1;
-            tapPage2.Text = "Genres";
+            tapPage2.Text = "Genre";
             tapPage2.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -310,7 +310,7 @@
             // btn_DeleteGen
             // 
             btn_DeleteGen.Location = new Point(426, 553);
-            btn_DeleteGen.Name = "btn_DeleteGenres";
+            btn_DeleteGen.Name = "btn_DeleteGen";
             btn_DeleteGen.Size = new Size(400, 29);
             btn_DeleteGen.TabIndex = 9;
             btn_DeleteGen.Text = "Löschen";
@@ -361,6 +361,47 @@
             tabPage5.Text = "Stock";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(8, 486);
+            label12.Name = "label12";
+            label12.Size = new Size(52, 20);
+            label12.TabIndex = 22;
+            label12.Text = "Paneel";
+            // 
+            // txtPanel
+            // 
+            txtPanel.Location = new Point(8, 509);
+            txtPanel.Name = "txtPanel";
+            txtPanel.Size = new Size(400, 27);
+            txtPanel.TabIndex = 21;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(426, 433);
+            label11.Name = "label11";
+            label11.Size = new Size(47, 20);
+            label11.TabIndex = 20;
+            label11.Text = "Regal";
+            // 
+            // txtShelve
+            // 
+            txtShelve.Location = new Point(426, 456);
+            txtShelve.Name = "txtShelve";
+            txtShelve.Size = new Size(400, 27);
+            txtShelve.TabIndex = 19;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(8, 433);
+            label10.Name = "label10";
+            label10.Size = new Size(50, 20);
+            label10.TabIndex = 18;
+            label10.Text = "Ebene";
+            // 
             // txtLevel
             // 
             txtLevel.Location = new Point(8, 456);
@@ -390,22 +431,22 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(dataGridView2);
+            panel6.Controls.Add(dataGridStock);
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
             panel6.Size = new Size(834, 430);
             panel6.TabIndex = 0;
             // 
-            // dataGridView2
+            // dataGridStock
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(0, 0);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(834, 430);
-            dataGridView2.TabIndex = 0;
+            dataGridStock.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridStock.Dock = DockStyle.Fill;
+            dataGridStock.Location = new Point(0, 0);
+            dataGridStock.Name = "dataGridStock";
+            dataGridStock.RowHeadersWidth = 51;
+            dataGridStock.RowTemplate.Height = 29;
+            dataGridStock.Size = new Size(834, 430);
+            dataGridStock.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -531,47 +572,6 @@
             txtISBN.Size = new Size(400, 27);
             txtISBN.TabIndex = 5;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(8, 433);
-            label10.Name = "label10";
-            label10.Size = new Size(50, 20);
-            label10.TabIndex = 18;
-            label10.Text = "Ebene";
-            // 
-            // txtShelve
-            // 
-            txtShelve.Location = new Point(426, 456);
-            txtShelve.Name = "txtShelve";
-            txtShelve.Size = new Size(400, 27);
-            txtShelve.TabIndex = 19;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(426, 433);
-            label11.Name = "label11";
-            label11.Size = new Size(47, 20);
-            label11.TabIndex = 20;
-            label11.Text = "Regal";
-            // 
-            // txtPanel
-            // 
-            txtPanel.Location = new Point(8, 509);
-            txtPanel.Name = "txtPanel";
-            txtPanel.Size = new Size(400, 27);
-            txtPanel.TabIndex = 21;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(8, 486);
-            label12.Name = "label12";
-            label12.Size = new Size(52, 20);
-            label12.TabIndex = 22;
-            label12.Text = "Paneel";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -586,7 +586,7 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridOverview).EndInit();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -598,7 +598,7 @@
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
             panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridStock).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             panel4.ResumeLayout(false);
@@ -641,13 +641,13 @@
         private Panel panel4;
         private DataGridView dataGridBook;
         private Panel panel5;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridOverview;
         private Button btn_Search;
         private Label label9;
         private TextBox txtSearch;
         private TabPage tabPage5;
         private Panel panel6;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridStock;
         private Button btn_DeleteStock;
         private Button btn_AddStock;
         private TextBox txtLevel;

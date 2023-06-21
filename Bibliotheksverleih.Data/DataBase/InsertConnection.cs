@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace Bibliotheksverleih.Data
+namespace Bibliotheksverleih.Data.DataBase
 {
     public class InsertConnection
     {
