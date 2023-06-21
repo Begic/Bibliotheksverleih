@@ -27,8 +27,8 @@ public class DbData
                     allwriters.Add(new Writer
                     {
                         Id = (int)reader["WriterID"],
-                        FName = (string)reader["FName"],
-                        LName = (string)reader["LName"]
+                        FirstName = (string)reader["FName"],
+                        LastName = (string)reader["LName"]
                     });
                 }
                 reader.Close();

@@ -1,5 +1,5 @@
 using Bibliotheksverleih.Data.DataBase;
-using Microsoft.IdentityModel.Tokens;
+using Bibliotheksverleih.Data.Models;
 
 namespace Bibliotheksverleih.UI
 {
@@ -19,7 +19,15 @@ namespace Bibliotheksverleih.UI
             insertCon = new InsertConnection(connectionString);
             deleteCon = new DeleteConnection(connectionString);
 
+            SetDataGridSettings();
             LoadAllDataForDataGrid();
+        }
+
+        private void SetDataGridSettings()
+        {
+            dataGridWriter.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridGenres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridStock.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void LoadAllDataForDataGrid()
@@ -37,12 +45,22 @@ namespace Bibliotheksverleih.UI
 
                 txtFirstName.Text = string.Empty;
                 txtLastName.Text = string.Empty;
+                LoadAllDataForDataGrid();
             }
         }
 
         private void btn_DeleteWriter_Click(object sender, EventArgs e)
         {
-            //TODO
+            if (dataGridWriter.SelectedRows.Count > 0)
+            {
+                var selectedRow = (Writer)dataGridWriter.SelectedRows[0].DataBoundItem;
+
+                if (selectedRow != null)
+                {
+                    deleteCon.DeleteWriter(selectedRow);
+                    LoadAllDataForDataGrid();
+                }
+            }
         }
 
         private void btn_AddGenres_Click(object sender, EventArgs e)
@@ -52,6 +70,7 @@ namespace Bibliotheksverleih.UI
                 insertCon.AddGenres(txtGenres.Text);
 
                 txtGenres.Text = string.Empty;
+                LoadAllDataForDataGrid();
             }
         }
 
@@ -84,6 +103,7 @@ namespace Bibliotheksverleih.UI
                 txtLevel.Text = string.Empty;
                 txtShelve.Text = string.Empty;
                 txtPanel.Text = string.Empty;
+                LoadAllDataForDataGrid();
             }
         }
 
