@@ -3,10 +3,14 @@ using Microsoft.Data.SqlClient;
 
 namespace Bibliotheksverleih.Data
 {
-    public class InsertDbData
+    public class InsertConnection
     {
-        private string connectionString =
-            @"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=Bibliothek; Integrated Security=True";
+        private readonly string connectionString;
+
+        public InsertConnection(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
 
         public void AddWriter(string firstName, string lastName)
         {
@@ -79,6 +83,31 @@ namespace Bibliotheksverleih.Data
             //        throw;
             //    }
             //}
+        }
+
+        public void AddStock(string level, string shelve, string panel)
+        {
+            using (var con = new SqlConnection(connectionString))
+            {
+                var cmd = new SqlCommand("dbo.insertStock", con);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Level", level);
+                cmd.Parameters.AddWithValue("@Shelve", shelve);
+                cmd.Parameters.AddWithValue("@Panel", panel);
+
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
         }
     }
 }

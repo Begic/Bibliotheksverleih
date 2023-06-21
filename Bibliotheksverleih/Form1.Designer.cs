@@ -49,10 +49,16 @@
             tapPage2 = new TabPage();
             panel3 = new Panel();
             dataGridGenres = new DataGridView();
-            button1 = new Button();
+            btn_DeleteGen = new Button();
             btn_AddGenres = new Button();
             label4 = new Label();
             txtGenres = new TextBox();
+            tabPage5 = new TabPage();
+            txtLevel = new TextBox();
+            btn_DeleteStock = new Button();
+            btn_AddStock = new Button();
+            panel6 = new Panel();
+            dataGridView2 = new DataGridView();
             tabPage3 = new TabPage();
             panel4 = new Panel();
             dataGridBook = new DataGridView();
@@ -66,11 +72,11 @@
             label6 = new Label();
             txtTitel = new TextBox();
             txtISBN = new TextBox();
-            tabPage5 = new TabPage();
-            panel6 = new Panel();
-            dataGridView2 = new DataGridView();
-            btn_DeleteStock = new Button();
-            btn_AddStock = new Button();
+            label10 = new Label();
+            txtShelve = new TextBox();
+            label11 = new Label();
+            txtPanel = new TextBox();
+            label12 = new Label();
             panel1.SuspendLayout();
             btn_DeleteGenres.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -82,12 +88,12 @@
             tapPage2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridGenres).BeginInit();
-            tabPage3.SuspendLayout();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridBook).BeginInit();
             tabPage5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tabPage3.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridBook).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -270,7 +276,7 @@
             // tapPage2
             // 
             tapPage2.Controls.Add(panel3);
-            tapPage2.Controls.Add(button1);
+            tapPage2.Controls.Add(btn_DeleteGen);
             tapPage2.Controls.Add(btn_AddGenres);
             tapPage2.Controls.Add(label4);
             tapPage2.Controls.Add(txtGenres);
@@ -301,15 +307,15 @@
             dataGridGenres.Size = new Size(834, 430);
             dataGridGenres.TabIndex = 1;
             // 
-            // button1
+            // btn_DeleteGen
             // 
-            button1.Location = new Point(426, 553);
-            button1.Name = "button1";
-            button1.Size = new Size(400, 29);
-            button1.TabIndex = 9;
-            button1.Text = "Löschen";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_DeleteGen.Location = new Point(426, 553);
+            btn_DeleteGen.Name = "btn_DeleteGenres";
+            btn_DeleteGen.Size = new Size(400, 29);
+            btn_DeleteGen.TabIndex = 9;
+            btn_DeleteGen.Text = "Löschen";
+            btn_DeleteGen.UseVisualStyleBackColor = true;
+            btn_DeleteGen.Click += btn_DeleteGenres_Click;
             // 
             // btn_AddGenres
             // 
@@ -336,6 +342,70 @@
             txtGenres.Name = "txtGenres";
             txtGenres.Size = new Size(400, 27);
             txtGenres.TabIndex = 5;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(label12);
+            tabPage5.Controls.Add(txtPanel);
+            tabPage5.Controls.Add(label11);
+            tabPage5.Controls.Add(txtShelve);
+            tabPage5.Controls.Add(label10);
+            tabPage5.Controls.Add(txtLevel);
+            tabPage5.Controls.Add(btn_DeleteStock);
+            tabPage5.Controls.Add(btn_AddStock);
+            tabPage5.Controls.Add(panel6);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(834, 590);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Stock";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // txtLevel
+            // 
+            txtLevel.Location = new Point(8, 456);
+            txtLevel.Name = "txtLevel";
+            txtLevel.Size = new Size(400, 27);
+            txtLevel.TabIndex = 17;
+            // 
+            // btn_DeleteStock
+            // 
+            btn_DeleteStock.Location = new Point(426, 553);
+            btn_DeleteStock.Name = "btn_DeleteStock";
+            btn_DeleteStock.Size = new Size(400, 29);
+            btn_DeleteStock.TabIndex = 16;
+            btn_DeleteStock.Text = "Löschen";
+            btn_DeleteStock.UseVisualStyleBackColor = true;
+            btn_DeleteStock.Click += btn_DeleteStock_Click;
+            // 
+            // btn_AddStock
+            // 
+            btn_AddStock.Location = new Point(8, 553);
+            btn_AddStock.Name = "btn_AddStock";
+            btn_AddStock.Size = new Size(400, 29);
+            btn_AddStock.TabIndex = 15;
+            btn_AddStock.Text = "Hinzufügen/Bearbeiten";
+            btn_AddStock.UseVisualStyleBackColor = true;
+            btn_AddStock.Click += btn_AddStock_Click;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(dataGridView2);
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(834, 430);
+            panel6.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Dock = DockStyle.Fill;
+            dataGridView2.Location = new Point(0, 0);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(834, 430);
+            dataGridView2.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -461,54 +531,46 @@
             txtISBN.Size = new Size(400, 27);
             txtISBN.TabIndex = 5;
             // 
-            // tabPage5
+            // label10
             // 
-            tabPage5.Controls.Add(btn_DeleteStock);
-            tabPage5.Controls.Add(btn_AddStock);
-            tabPage5.Controls.Add(panel6);
-            tabPage5.Location = new Point(4, 29);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(834, 590);
-            tabPage5.TabIndex = 4;
-            tabPage5.Text = "Stock";
-            tabPage5.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Location = new Point(8, 433);
+            label10.Name = "label10";
+            label10.Size = new Size(50, 20);
+            label10.TabIndex = 18;
+            label10.Text = "Ebene";
             // 
-            // panel6
+            // txtShelve
             // 
-            panel6.Controls.Add(dataGridView2);
-            panel6.Location = new Point(0, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(834, 430);
-            panel6.TabIndex = 0;
+            txtShelve.Location = new Point(426, 456);
+            txtShelve.Name = "txtShelve";
+            txtShelve.Size = new Size(400, 27);
+            txtShelve.TabIndex = 19;
             // 
-            // dataGridView2
+            // label11
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(0, 0);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(834, 430);
-            dataGridView2.TabIndex = 0;
+            label11.AutoSize = true;
+            label11.Location = new Point(426, 433);
+            label11.Name = "label11";
+            label11.Size = new Size(47, 20);
+            label11.TabIndex = 20;
+            label11.Text = "Regal";
             // 
-            // btn_DeleteStock
+            // txtPanel
             // 
-            btn_DeleteStock.Location = new Point(426, 553);
-            btn_DeleteStock.Name = "btn_DeleteStock";
-            btn_DeleteStock.Size = new Size(400, 29);
-            btn_DeleteStock.TabIndex = 16;
-            btn_DeleteStock.Text = "Löschen";
-            btn_DeleteStock.UseVisualStyleBackColor = true;
+            txtPanel.Location = new Point(8, 509);
+            txtPanel.Name = "txtPanel";
+            txtPanel.Size = new Size(400, 27);
+            txtPanel.TabIndex = 21;
             // 
-            // btn_AddStock
+            // label12
             // 
-            btn_AddStock.Location = new Point(8, 553);
-            btn_AddStock.Name = "btn_AddStock";
-            btn_AddStock.Size = new Size(400, 29);
-            btn_AddStock.TabIndex = 15;
-            btn_AddStock.Text = "Hinzufügen/Bearbeiten";
-            btn_AddStock.UseVisualStyleBackColor = true;
+            label12.AutoSize = true;
+            label12.Location = new Point(8, 486);
+            label12.Name = "label12";
+            label12.Size = new Size(52, 20);
+            label12.TabIndex = 22;
+            label12.Text = "Paneel";
             // 
             // Form1
             // 
@@ -533,13 +595,14 @@
             tapPage2.PerformLayout();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridGenres).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridBook).EndInit();
-            tabPage5.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
@@ -568,7 +631,7 @@
         private Label label7;
         private TextBox textBox4;
         private TabPage tabPage4;
-        private Button button1;
+        private Button btn_DeleteGen;
         private Button btn_DeleteBook;
         private Label label8;
         private Panel panel2;
@@ -587,5 +650,11 @@
         private DataGridView dataGridView2;
         private Button btn_DeleteStock;
         private Button btn_AddStock;
+        private TextBox txtLevel;
+        private Label label10;
+        private Label label12;
+        private TextBox txtPanel;
+        private Label label11;
+        private TextBox txtShelve;
     }
 }
