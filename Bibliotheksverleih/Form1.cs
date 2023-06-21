@@ -76,7 +76,16 @@ namespace Bibliotheksverleih.UI
 
         private void btn_DeleteGenres_Click(object? sender, EventArgs e)
         {
-            //TODO
+            if (dataGridGenres.SelectedRows.Count > 0)
+            {
+                var selectedRow = (Genre)dataGridGenres.SelectedRows[0].DataBoundItem;
+
+                if (selectedRow != null)
+                {
+                    deleteCon.DeleteGenre(selectedRow);
+                    LoadAllDataForDataGrid();
+                }
+            }
         }
 
         private void btn_AddBook_Click(object sender, EventArgs e)
@@ -91,6 +100,7 @@ namespace Bibliotheksverleih.UI
         private void btn_DeleteBook_Click(object sender, EventArgs e)
         {
             //TODO
+            deleteCon.DeleteBook();
         }
 
 
@@ -109,7 +119,16 @@ namespace Bibliotheksverleih.UI
 
         private void btn_DeleteStock_Click(object sender, EventArgs e)
         {
-            //TODO
+            if (dataGridStock.SelectedRows.Count > 0)
+            {
+                var selectedRow = (Stock)dataGridStock.SelectedRows[0].DataBoundItem;
+
+                if (selectedRow != null)
+                {
+                    deleteCon.DeleteStock(selectedRow);
+                    LoadAllDataForDataGrid();
+                }
+            }
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
