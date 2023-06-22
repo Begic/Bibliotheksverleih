@@ -63,6 +63,20 @@ namespace Bibliotheksverleih.UI
             }
         }
 
+        private void dataGridWriter_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridWriter.SelectedRows.Count > 0)
+            {
+                var selectedRow = (Writer)dataGridWriter.SelectedRows[0].DataBoundItem;
+
+                if (selectedRow != null)
+                {
+                    txtFirstName.Text = selectedRow.FirstName;
+                    txtLastName.Text = selectedRow.LastName;
+                }
+            }
+        }
+
         private void btn_AddGenres_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtGenres.Text))
@@ -88,6 +102,19 @@ namespace Bibliotheksverleih.UI
             }
         }
 
+        private void dataGridGenres_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridGenres.SelectedRows.Count > 0)
+            {
+                var selectedRow = (Genre)dataGridGenres.SelectedRows[0].DataBoundItem;
+
+                if (selectedRow != null)
+                {
+                    txtGenres.Text = selectedRow.GenreName;
+                }
+            }
+        }
+
         private void btn_AddBook_Click(object sender, EventArgs e)
         {
             //TODO Last
@@ -103,6 +130,10 @@ namespace Bibliotheksverleih.UI
             deleteCon.DeleteBook();
         }
 
+        private void dataGridBook_SelectionChanged(object sender, EventArgs e)
+        {
+            //TODO
+        }
 
         private void btn_AddStock_Click(object sender, EventArgs e)
         {
@@ -127,6 +158,21 @@ namespace Bibliotheksverleih.UI
                 {
                     deleteCon.DeleteStock(selectedRow);
                     LoadAllDataForDataGrid();
+                }
+            }
+        }
+
+        private void dataGridStock_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridStock.SelectedRows.Count > 0)
+            {
+                var selectedRow = (Stock)dataGridStock.SelectedRows[0].DataBoundItem;
+
+                if (selectedRow != null)
+                {
+                    txtLevel.Text = selectedRow.Level.ToString();
+                    txtShelve.Text = selectedRow.Shelve.ToString();
+                    txtPanel.Text = selectedRow.Panel.ToString();
                 }
             }
         }

@@ -213,6 +213,7 @@
             dataGridWriter.RowTemplate.Height = 29;
             dataGridWriter.Size = new Size(834, 430);
             dataGridWriter.TabIndex = 0;
+            dataGridWriter.SelectionChanged += dataGridWriter_SelectionChanged;
             // 
             // label8
             // 
@@ -306,6 +307,7 @@
             dataGridGenres.RowTemplate.Height = 29;
             dataGridGenres.Size = new Size(834, 430);
             dataGridGenres.TabIndex = 1;
+            dataGridGenres.SelectionChanged += dataGridGenres_SelectionChanged;
             // 
             // btn_DeleteGen
             // 
@@ -447,6 +449,7 @@
             dataGridStock.RowTemplate.Height = 29;
             dataGridStock.Size = new Size(834, 430);
             dataGridStock.TabIndex = 0;
+            dataGridStock.SelectionChanged += dataGridStock_SelectionChanged;
             // 
             // tabPage3
             // 
@@ -487,6 +490,7 @@
             dataGridBook.RowTemplate.Height = 29;
             dataGridBook.Size = new Size(834, 430);
             dataGridBook.TabIndex = 1;
+            dataGridBook.SelectionChanged += dataGridBook_SelectionChanged;
             // 
             // btn_DeleteBook
             // 
