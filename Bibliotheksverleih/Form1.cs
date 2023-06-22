@@ -41,7 +41,12 @@ namespace Bibliotheksverleih.UI
         {
             if (!string.IsNullOrEmpty(txtFirstName.Text) && !string.IsNullOrEmpty(txtLastName.Text))
             {
-                insertCon.AddWriter(txtFirstName.Text, txtLastName.Text);
+                insertCon.AddWriter(new Writer
+                {
+                    Id = null,
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text,
+                });
 
                 txtFirstName.Text = string.Empty;
                 txtLastName.Text = string.Empty;
@@ -81,7 +86,11 @@ namespace Bibliotheksverleih.UI
         {
             if (!string.IsNullOrEmpty(txtGenres.Text))
             {
-                insertCon.AddGenres(txtGenres.Text);
+                insertCon.AddGenres(new Genre
+                {
+                    Id = null,
+                    GenreName = txtGenres.Text,
+                });
 
                 txtGenres.Text = string.Empty;
                 LoadAllDataForDataGrid();
@@ -139,7 +148,13 @@ namespace Bibliotheksverleih.UI
         {
             if (!string.IsNullOrEmpty(txtLevel.Text) && !string.IsNullOrEmpty(txtShelve.Text) && !string.IsNullOrEmpty(txtLevel.Text))
             {
-                insertCon.AddStock(txtLevel.Text, txtShelve.Text, txtPanel.Text);
+                insertCon.AddStock(new Stock
+                {
+                    Id = null,
+                    Level = Convert.ToInt32(txtLevel.Text),
+                    Panel = Convert.ToInt32(txtPanel.Text),
+                    Shelve = Convert.ToInt32(txtShelve.Text)
+                });
 
                 txtLevel.Text = string.Empty;
                 txtShelve.Text = string.Empty;

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using Bibliotheksverleih.Data.Models;
 using Microsoft.Data.SqlClient;
 
 namespace Bibliotheksverleih.Data.DataBase
@@ -12,15 +13,15 @@ namespace Bibliotheksverleih.Data.DataBase
             this.connectionString = connectionString;
         }
 
-        public void AddWriter(string firstName, string lastName)
+        public void AddWriter(Writer writer)
         {
             using (var con = new SqlConnection(connectionString))
             {
                 var cmd = new SqlCommand("dbo.insertWriter", con);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("FName", firstName);
-                cmd.Parameters.AddWithValue("LName", lastName);
+                cmd.Parameters.AddWithValue("FName", writer.FirstName);
+                cmd.Parameters.AddWithValue("LName", writer.LastName);
 
                 try
                 {
@@ -36,14 +37,14 @@ namespace Bibliotheksverleih.Data.DataBase
             }
         }
 
-        public void AddGenres(string genre)
+        public void AddGenres(Genre genre)
         {
             using (var con = new SqlConnection(connectionString))
             {
                 var cmd = new SqlCommand("dbo.insertGenre", con);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Genre", genre);
+                cmd.Parameters.AddWithValue("@Genre", genre.GenreName);
 
                 try
                 {
@@ -85,16 +86,16 @@ namespace Bibliotheksverleih.Data.DataBase
             //}
         }
 
-        public void AddStock(string level, string shelve, string panel)
+        public void AddStock(Stock stock)
         {
             using (var con = new SqlConnection(connectionString))
             {
                 var cmd = new SqlCommand("dbo.insertStock", con);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Level", level);
-                cmd.Parameters.AddWithValue("@Shelve", shelve);
-                cmd.Parameters.AddWithValue("@Panel", panel);
+                cmd.Parameters.AddWithValue("@Level", stock.Level);
+                cmd.Parameters.AddWithValue("@Shelve", stock.Shelve);
+                cmd.Parameters.AddWithValue("@Panel", stock.Panel);
 
                 try
                 {
