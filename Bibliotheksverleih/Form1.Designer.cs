@@ -68,6 +68,15 @@
             panel6 = new Panel();
             dataGridStock = new DataGridView();
             tabPage3 = new TabPage();
+            label15 = new Label();
+            label16 = new Label();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            label13 = new Label();
+            label14 = new Label();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            btn_NewBook = new Button();
             panel4 = new Panel();
             dataGridBook = new DataGridView();
             btn_DeleteBook = new Button();
@@ -80,7 +89,6 @@
             label6 = new Label();
             txtTitel = new TextBox();
             txtISBN = new TextBox();
-            btn_NewBook = new Button();
             panel1.SuspendLayout();
             btn_DeleteGenres.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -106,7 +114,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(842, 623);
+            panel1.Size = new Size(842, 716);
             panel1.TabIndex = 1;
             // 
             // btn_DeleteGenres
@@ -120,7 +128,7 @@
             btn_DeleteGenres.Location = new Point(0, 0);
             btn_DeleteGenres.Name = "btn_DeleteGenres";
             btn_DeleteGenres.SelectedIndex = 0;
-            btn_DeleteGenres.Size = new Size(842, 623);
+            btn_DeleteGenres.Size = new Size(842, 716);
             btn_DeleteGenres.TabIndex = 2;
             // 
             // tabPage4
@@ -131,7 +139,7 @@
             tabPage4.Controls.Add(panel5);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(834, 590);
+            tabPage4.Size = new Size(834, 683);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Übersicht";
             tabPage4.UseVisualStyleBackColor = true;
@@ -167,7 +175,7 @@
             panel5.Controls.Add(dataGridOverview);
             panel5.Location = new Point(0, 48);
             panel5.Name = "panel5";
-            panel5.Size = new Size(834, 542);
+            panel5.Size = new Size(834, 635);
             panel5.TabIndex = 0;
             // 
             // dataGridOverview
@@ -178,7 +186,7 @@
             dataGridOverview.Name = "dataGridOverview";
             dataGridOverview.RowHeadersWidth = 51;
             dataGridOverview.RowTemplate.Height = 29;
-            dataGridOverview.Size = new Size(834, 542);
+            dataGridOverview.Size = new Size(834, 635);
             dataGridOverview.TabIndex = 0;
             // 
             // tabPage1
@@ -195,14 +203,14 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(834, 590);
+            tabPage1.Size = new Size(834, 683);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Autoren";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // btn_NewWriter
             // 
-            btn_NewWriter.Location = new Point(8, 553);
+            btn_NewWriter.Location = new Point(8, 648);
             btn_NewWriter.Name = "btn_NewWriter";
             btn_NewWriter.Size = new Size(270, 29);
             btn_NewWriter.TabIndex = 9;
@@ -241,7 +249,7 @@
             // 
             // btn_DeleteWriter
             // 
-            btn_DeleteWriter.Location = new Point(556, 553);
+            btn_DeleteWriter.Location = new Point(558, 648);
             btn_DeleteWriter.Name = "btn_DeleteWriter";
             btn_DeleteWriter.Size = new Size(270, 29);
             btn_DeleteWriter.TabIndex = 5;
@@ -251,7 +259,7 @@
             // 
             // btn_SaveWriter
             // 
-            btn_SaveWriter.Location = new Point(282, 553);
+            btn_SaveWriter.Location = new Point(282, 648);
             btn_SaveWriter.Name = "btn_SaveWriter";
             btn_SaveWriter.Size = new Size(270, 29);
             btn_SaveWriter.TabIndex = 4;
@@ -300,14 +308,14 @@
             tapPage2.Location = new Point(4, 29);
             tapPage2.Name = "tapPage2";
             tapPage2.Padding = new Padding(3);
-            tapPage2.Size = new Size(834, 590);
+            tapPage2.Size = new Size(834, 683);
             tapPage2.TabIndex = 1;
             tapPage2.Text = "Genre";
             tapPage2.UseVisualStyleBackColor = true;
             // 
             // btn_NewGenres
             // 
-            btn_NewGenres.Location = new Point(8, 553);
+            btn_NewGenres.Location = new Point(8, 648);
             btn_NewGenres.Name = "btn_NewGenres";
             btn_NewGenres.Size = new Size(270, 29);
             btn_NewGenres.TabIndex = 11;
@@ -337,7 +345,7 @@
             // 
             // btn_DeleteGen
             // 
-            btn_DeleteGen.Location = new Point(556, 553);
+            btn_DeleteGen.Location = new Point(556, 648);
             btn_DeleteGen.Name = "btn_DeleteGen";
             btn_DeleteGen.Size = new Size(270, 29);
             btn_DeleteGen.TabIndex = 9;
@@ -347,7 +355,7 @@
             // 
             // btn_SaveGenres
             // 
-            btn_SaveGenres.Location = new Point(282, 553);
+            btn_SaveGenres.Location = new Point(282, 648);
             btn_SaveGenres.Name = "btn_SaveGenres";
             btn_SaveGenres.Size = new Size(270, 29);
             btn_SaveGenres.TabIndex = 8;
@@ -385,14 +393,14 @@
             tabPage5.Controls.Add(panel6);
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(834, 590);
+            tabPage5.Size = new Size(834, 683);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Stock";
             tabPage5.UseVisualStyleBackColor = true;
             // 
             // btn_NewStock
             // 
-            btn_NewStock.Location = new Point(8, 553);
+            btn_NewStock.Location = new Point(8, 648);
             btn_NewStock.Name = "btn_NewStock";
             btn_NewStock.Size = new Size(270, 29);
             btn_NewStock.TabIndex = 23;
@@ -450,7 +458,7 @@
             // 
             // btn_DeleteStock
             // 
-            btn_DeleteStock.Location = new Point(556, 553);
+            btn_DeleteStock.Location = new Point(556, 648);
             btn_DeleteStock.Name = "btn_DeleteStock";
             btn_DeleteStock.Size = new Size(270, 29);
             btn_DeleteStock.TabIndex = 16;
@@ -460,7 +468,7 @@
             // 
             // btn_SaveStock
             // 
-            btn_SaveStock.Location = new Point(282, 553);
+            btn_SaveStock.Location = new Point(282, 648);
             btn_SaveStock.Name = "btn_SaveStock";
             btn_SaveStock.Size = new Size(270, 29);
             btn_SaveStock.TabIndex = 15;
@@ -490,6 +498,14 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(label15);
+            tabPage3.Controls.Add(label16);
+            tabPage3.Controls.Add(textBox5);
+            tabPage3.Controls.Add(textBox6);
+            tabPage3.Controls.Add(label13);
+            tabPage3.Controls.Add(label14);
+            tabPage3.Controls.Add(textBox2);
+            tabPage3.Controls.Add(textBox3);
             tabPage3.Controls.Add(btn_NewBook);
             tabPage3.Controls.Add(panel4);
             tabPage3.Controls.Add(btn_DeleteBook);
@@ -505,10 +521,84 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(834, 590);
+            tabPage3.Size = new Size(834, 683);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Bücher";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(426, 592);
+            label15.Name = "label15";
+            label15.Size = new Size(58, 20);
+            label15.TabIndex = 32;
+            label15.Text = "StockId";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(8, 592);
+            label16.Name = "label16";
+            label16.Size = new Size(46, 20);
+            label16.TabIndex = 31;
+            label16.Text = "BYear";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(426, 615);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(400, 27);
+            textBox5.TabIndex = 30;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(8, 615);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(400, 27);
+            textBox6.TabIndex = 29;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(426, 539);
+            label13.Name = "label13";
+            label13.Size = new Size(58, 20);
+            label13.TabIndex = 28;
+            label13.Text = "StockId";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(8, 539);
+            label14.Name = "label14";
+            label14.Size = new Size(46, 20);
+            label14.TabIndex = 27;
+            label14.Text = "BYear";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(426, 562);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(400, 27);
+            textBox2.TabIndex = 26;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(8, 562);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(400, 27);
+            textBox3.TabIndex = 25;
+            // 
+            // btn_NewBook
+            // 
+            btn_NewBook.Location = new Point(8, 648);
+            btn_NewBook.Name = "btn_NewBook";
+            btn_NewBook.Size = new Size(270, 29);
+            btn_NewBook.TabIndex = 24;
+            btn_NewBook.Text = "Neuer Eintrag";
+            btn_NewBook.UseVisualStyleBackColor = true;
+            btn_NewBook.Click += btn_NewBook_Click;
             // 
             // panel4
             // 
@@ -532,7 +622,7 @@
             // 
             // btn_DeleteBook
             // 
-            btn_DeleteBook.Location = new Point(556, 553);
+            btn_DeleteBook.Location = new Point(556, 648);
             btn_DeleteBook.Name = "btn_DeleteBook";
             btn_DeleteBook.Size = new Size(270, 29);
             btn_DeleteBook.TabIndex = 14;
@@ -574,7 +664,7 @@
             // 
             // btn_SaveBook
             // 
-            btn_SaveBook.Location = new Point(282, 553);
+            btn_SaveBook.Location = new Point(282, 648);
             btn_SaveBook.Name = "btn_SaveBook";
             btn_SaveBook.Size = new Size(270, 29);
             btn_SaveBook.TabIndex = 9;
@@ -614,21 +704,11 @@
             txtISBN.Size = new Size(400, 27);
             txtISBN.TabIndex = 5;
             // 
-            // btn_NewBook
-            // 
-            btn_NewBook.Location = new Point(8, 553);
-            btn_NewBook.Name = "btn_NewBook";
-            btn_NewBook.Size = new Size(270, 29);
-            btn_NewBook.TabIndex = 24;
-            btn_NewBook.Text = "Neuer Eintrag";
-            btn_NewBook.UseVisualStyleBackColor = true;
-            btn_NewBook.Click += btn_NewBook_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 623);
+            ClientSize = new Size(842, 716);
             Controls.Add(panel1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -712,5 +792,13 @@
         private Button btn_NewGenres;
         private Button btn_NewStock;
         private Button btn_NewBook;
+        private Label label13;
+        private Label label14;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Label label15;
+        private Label label16;
+        private TextBox textBox5;
+        private TextBox textBox6;
     }
 }

@@ -13,6 +13,10 @@ namespace Bibliotheksverleih.UI
         public int? genreId;
         public int? stockId;
 
+        private List<Writer> allWritersFromDb;
+        private List<Genre> allGenresFromDb;
+        private List<Stock> allStocksFromDb;
+
         public Form1()
         {
             InitializeComponent();
@@ -36,9 +40,14 @@ namespace Bibliotheksverleih.UI
 
         private void LoadAllDataForDataGrid()
         {
-            dataGridWriter.DataSource = dbData.GetAllWriters();
-            dataGridGenres.DataSource = dbData.GetAllGenres();
-            dataGridStock.DataSource = dbData.GetAllStocks();
+            allWritersFromDb = dbData.GetAllWriters();
+            dataGridWriter.DataSource = allWritersFromDb;
+
+            allGenresFromDb = dbData.GetAllGenres();
+            dataGridGenres.DataSource = allGenresFromDb;
+
+            allStocksFromDb = dbData.GetAllStocks();
+            dataGridStock.DataSource = allStocksFromDb;
         }
 
         private void btn_NewWriter_Click(object sender, EventArgs e)
