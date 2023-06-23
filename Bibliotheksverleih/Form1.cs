@@ -9,6 +9,10 @@ namespace Bibliotheksverleih.UI
         private readonly InsertConnection insertCon;
         private readonly DeleteConnection deleteCon;
 
+        public int? writerId;
+        public int? genreId;
+        public int? stockId;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,13 +41,20 @@ namespace Bibliotheksverleih.UI
             dataGridStock.DataSource = dbData.GetAllStocks();
         }
 
-        private void btn_AddWriter_Click(object sender, EventArgs e)
+        private void btn_NewWriter_Click(object sender, EventArgs e)
+        {
+            writerId = null;
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+        }
+
+        private void btn_SaveWriter_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtFirstName.Text) && !string.IsNullOrEmpty(txtLastName.Text))
             {
                 insertCon.AddWriter(new Writer
                 {
-                    Id = null,
+                    Id = writerId,
                     FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text,
                 });
@@ -76,19 +87,30 @@ namespace Bibliotheksverleih.UI
 
                 if (selectedRow != null)
                 {
+                    writerId = selectedRow.Id;
                     txtFirstName.Text = selectedRow.FirstName;
                     txtLastName.Text = selectedRow.LastName;
                 }
             }
         }
 
-        private void btn_AddGenres_Click(object sender, EventArgs e)
+
+
+
+
+        private void btn_NewGenres_Click(object sender, EventArgs e)
+        {
+            genreId = null;
+            txtGenres.Text = string.Empty;
+        }
+
+        private void btn_SaveGenres_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtGenres.Text))
             {
                 insertCon.AddGenres(new Genre
                 {
-                    Id = null,
+                    Id = genreId,
                     GenreName = txtGenres.Text,
                 });
 
@@ -119,9 +141,19 @@ namespace Bibliotheksverleih.UI
 
                 if (selectedRow != null)
                 {
+                    genreId = selectedRow.Id;
                     txtGenres.Text = selectedRow.GenreName;
                 }
             }
+        }
+
+
+
+
+
+        private void btn_NewBook_Click(object sender, EventArgs e)
+        {
+            //TODO
         }
 
         private void btn_AddBook_Click(object sender, EventArgs e)
@@ -144,13 +176,25 @@ namespace Bibliotheksverleih.UI
             //TODO
         }
 
-        private void btn_AddStock_Click(object sender, EventArgs e)
+
+
+
+
+        private void btn_NewStock_Click(object sender, EventArgs e)
+        {
+            stockId = null;
+            txtLevel.Text = string.Empty;
+            txtShelve.Text = string.Empty;
+            txtPanel.Text = string.Empty;
+        }
+
+        private void btn_SaveStock_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtLevel.Text) && !string.IsNullOrEmpty(txtShelve.Text) && !string.IsNullOrEmpty(txtLevel.Text))
             {
                 insertCon.AddStock(new Stock
                 {
-                    Id = null,
+                    Id = stockId,
                     Level = Convert.ToInt32(txtLevel.Text),
                     Panel = Convert.ToInt32(txtPanel.Text),
                     Shelve = Convert.ToInt32(txtShelve.Text)
@@ -185,6 +229,7 @@ namespace Bibliotheksverleih.UI
 
                 if (selectedRow != null)
                 {
+                    stockId = selectedRow.Id;
                     txtLevel.Text = selectedRow.Level.ToString();
                     txtShelve.Text = selectedRow.Shelve.ToString();
                     txtPanel.Text = selectedRow.Panel.ToString();

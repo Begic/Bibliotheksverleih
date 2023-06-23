@@ -37,23 +37,26 @@
             panel5 = new Panel();
             dataGridOverview = new DataGridView();
             tabPage1 = new TabPage();
+            btn_NewWriter = new Button();
             panel2 = new Panel();
             dataGridWriter = new DataGridView();
             label8 = new Label();
             btn_DeleteWriter = new Button();
-            btn_AddWriter = new Button();
+            btn_SaveWriter = new Button();
             label2 = new Label();
             label1 = new Label();
             txtLastName = new TextBox();
             txtFirstName = new TextBox();
             tapPage2 = new TabPage();
+            btn_NewGenres = new Button();
             panel3 = new Panel();
             dataGridGenres = new DataGridView();
             btn_DeleteGen = new Button();
-            btn_AddGenres = new Button();
+            btn_SaveGenres = new Button();
             label4 = new Label();
             txtGenres = new TextBox();
             tabPage5 = new TabPage();
+            btn_NewStock = new Button();
             label12 = new Label();
             txtPanel = new TextBox();
             label11 = new Label();
@@ -61,7 +64,7 @@
             label10 = new Label();
             txtLevel = new TextBox();
             btn_DeleteStock = new Button();
-            btn_AddStock = new Button();
+            btn_SaveStock = new Button();
             panel6 = new Panel();
             dataGridStock = new DataGridView();
             tabPage3 = new TabPage();
@@ -72,11 +75,12 @@
             label7 = new Label();
             textBox1 = new TextBox();
             textBox4 = new TextBox();
-            btn_AddBook = new Button();
+            btn_SaveBook = new Button();
             label5 = new Label();
             label6 = new Label();
             txtTitel = new TextBox();
             txtISBN = new TextBox();
+            btn_NewBook = new Button();
             panel1.SuspendLayout();
             btn_DeleteGenres.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -179,10 +183,11 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btn_NewWriter);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(btn_DeleteWriter);
-            tabPage1.Controls.Add(btn_AddWriter);
+            tabPage1.Controls.Add(btn_SaveWriter);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(txtLastName);
@@ -194,6 +199,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Autoren";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_NewWriter
+            // 
+            btn_NewWriter.Location = new Point(8, 553);
+            btn_NewWriter.Name = "btn_NewWriter";
+            btn_NewWriter.Size = new Size(270, 29);
+            btn_NewWriter.TabIndex = 9;
+            btn_NewWriter.Text = "Neuer Eintrag";
+            btn_NewWriter.UseVisualStyleBackColor = true;
+            btn_NewWriter.Click += btn_NewWriter_Click;
             // 
             // panel2
             // 
@@ -226,23 +241,23 @@
             // 
             // btn_DeleteWriter
             // 
-            btn_DeleteWriter.Location = new Point(426, 553);
+            btn_DeleteWriter.Location = new Point(556, 553);
             btn_DeleteWriter.Name = "btn_DeleteWriter";
-            btn_DeleteWriter.Size = new Size(400, 29);
+            btn_DeleteWriter.Size = new Size(270, 29);
             btn_DeleteWriter.TabIndex = 5;
             btn_DeleteWriter.Text = "Löschen";
             btn_DeleteWriter.UseVisualStyleBackColor = true;
             btn_DeleteWriter.Click += btn_DeleteWriter_Click;
             // 
-            // btn_AddWriter
+            // btn_SaveWriter
             // 
-            btn_AddWriter.Location = new Point(8, 553);
-            btn_AddWriter.Name = "btn_AddWriter";
-            btn_AddWriter.Size = new Size(400, 29);
-            btn_AddWriter.TabIndex = 4;
-            btn_AddWriter.Text = "Hinzufügen/Bearbeiten";
-            btn_AddWriter.UseVisualStyleBackColor = true;
-            btn_AddWriter.Click += btn_AddWriter_Click;
+            btn_SaveWriter.Location = new Point(282, 553);
+            btn_SaveWriter.Name = "btn_SaveWriter";
+            btn_SaveWriter.Size = new Size(270, 29);
+            btn_SaveWriter.TabIndex = 4;
+            btn_SaveWriter.Text = "Speichern";
+            btn_SaveWriter.UseVisualStyleBackColor = true;
+            btn_SaveWriter.Click += btn_SaveWriter_Click;
             // 
             // label2
             // 
@@ -276,9 +291,10 @@
             // 
             // tapPage2
             // 
+            tapPage2.Controls.Add(btn_NewGenres);
             tapPage2.Controls.Add(panel3);
             tapPage2.Controls.Add(btn_DeleteGen);
-            tapPage2.Controls.Add(btn_AddGenres);
+            tapPage2.Controls.Add(btn_SaveGenres);
             tapPage2.Controls.Add(label4);
             tapPage2.Controls.Add(txtGenres);
             tapPage2.Location = new Point(4, 29);
@@ -288,6 +304,16 @@
             tapPage2.TabIndex = 1;
             tapPage2.Text = "Genre";
             tapPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_NewGenres
+            // 
+            btn_NewGenres.Location = new Point(8, 553);
+            btn_NewGenres.Name = "btn_NewGenres";
+            btn_NewGenres.Size = new Size(270, 29);
+            btn_NewGenres.TabIndex = 11;
+            btn_NewGenres.Text = "Neuer Eintrag";
+            btn_NewGenres.UseVisualStyleBackColor = true;
+            btn_NewGenres.Click += btn_NewGenres_Click;
             // 
             // panel3
             // 
@@ -311,23 +337,23 @@
             // 
             // btn_DeleteGen
             // 
-            btn_DeleteGen.Location = new Point(426, 553);
+            btn_DeleteGen.Location = new Point(556, 553);
             btn_DeleteGen.Name = "btn_DeleteGen";
-            btn_DeleteGen.Size = new Size(400, 29);
+            btn_DeleteGen.Size = new Size(270, 29);
             btn_DeleteGen.TabIndex = 9;
             btn_DeleteGen.Text = "Löschen";
             btn_DeleteGen.UseVisualStyleBackColor = true;
             btn_DeleteGen.Click += btn_DeleteGenres_Click;
             // 
-            // btn_AddGenres
+            // btn_SaveGenres
             // 
-            btn_AddGenres.Location = new Point(8, 553);
-            btn_AddGenres.Name = "btn_AddGenres";
-            btn_AddGenres.Size = new Size(400, 29);
-            btn_AddGenres.TabIndex = 8;
-            btn_AddGenres.Text = "Hinzufügen/Bearbeiten";
-            btn_AddGenres.UseVisualStyleBackColor = true;
-            btn_AddGenres.Click += btn_AddGenres_Click;
+            btn_SaveGenres.Location = new Point(282, 553);
+            btn_SaveGenres.Name = "btn_SaveGenres";
+            btn_SaveGenres.Size = new Size(270, 29);
+            btn_SaveGenres.TabIndex = 8;
+            btn_SaveGenres.Text = "Speichern";
+            btn_SaveGenres.UseVisualStyleBackColor = true;
+            btn_SaveGenres.Click += btn_SaveGenres_Click;
             // 
             // label4
             // 
@@ -347,6 +373,7 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(btn_NewStock);
             tabPage5.Controls.Add(label12);
             tabPage5.Controls.Add(txtPanel);
             tabPage5.Controls.Add(label11);
@@ -354,7 +381,7 @@
             tabPage5.Controls.Add(label10);
             tabPage5.Controls.Add(txtLevel);
             tabPage5.Controls.Add(btn_DeleteStock);
-            tabPage5.Controls.Add(btn_AddStock);
+            tabPage5.Controls.Add(btn_SaveStock);
             tabPage5.Controls.Add(panel6);
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
@@ -362,6 +389,16 @@
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Stock";
             tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btn_NewStock
+            // 
+            btn_NewStock.Location = new Point(8, 553);
+            btn_NewStock.Name = "btn_NewStock";
+            btn_NewStock.Size = new Size(270, 29);
+            btn_NewStock.TabIndex = 23;
+            btn_NewStock.Text = "Neuer Eintrag";
+            btn_NewStock.UseVisualStyleBackColor = true;
+            btn_NewStock.Click += btn_NewStock_Click;
             // 
             // label12
             // 
@@ -413,23 +450,23 @@
             // 
             // btn_DeleteStock
             // 
-            btn_DeleteStock.Location = new Point(426, 553);
+            btn_DeleteStock.Location = new Point(556, 553);
             btn_DeleteStock.Name = "btn_DeleteStock";
-            btn_DeleteStock.Size = new Size(400, 29);
+            btn_DeleteStock.Size = new Size(270, 29);
             btn_DeleteStock.TabIndex = 16;
             btn_DeleteStock.Text = "Löschen";
             btn_DeleteStock.UseVisualStyleBackColor = true;
             btn_DeleteStock.Click += btn_DeleteStock_Click;
             // 
-            // btn_AddStock
+            // btn_SaveStock
             // 
-            btn_AddStock.Location = new Point(8, 553);
-            btn_AddStock.Name = "btn_AddStock";
-            btn_AddStock.Size = new Size(400, 29);
-            btn_AddStock.TabIndex = 15;
-            btn_AddStock.Text = "Hinzufügen/Bearbeiten";
-            btn_AddStock.UseVisualStyleBackColor = true;
-            btn_AddStock.Click += btn_AddStock_Click;
+            btn_SaveStock.Location = new Point(282, 553);
+            btn_SaveStock.Name = "btn_SaveStock";
+            btn_SaveStock.Size = new Size(270, 29);
+            btn_SaveStock.TabIndex = 15;
+            btn_SaveStock.Text = "Speichern";
+            btn_SaveStock.UseVisualStyleBackColor = true;
+            btn_SaveStock.Click += btn_SaveStock_Click;
             // 
             // panel6
             // 
@@ -453,13 +490,14 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(btn_NewBook);
             tabPage3.Controls.Add(panel4);
             tabPage3.Controls.Add(btn_DeleteBook);
             tabPage3.Controls.Add(label3);
             tabPage3.Controls.Add(label7);
             tabPage3.Controls.Add(textBox1);
             tabPage3.Controls.Add(textBox4);
-            tabPage3.Controls.Add(btn_AddBook);
+            tabPage3.Controls.Add(btn_SaveBook);
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(label6);
             tabPage3.Controls.Add(txtTitel);
@@ -494,9 +532,9 @@
             // 
             // btn_DeleteBook
             // 
-            btn_DeleteBook.Location = new Point(426, 553);
+            btn_DeleteBook.Location = new Point(556, 553);
             btn_DeleteBook.Name = "btn_DeleteBook";
-            btn_DeleteBook.Size = new Size(400, 29);
+            btn_DeleteBook.Size = new Size(270, 29);
             btn_DeleteBook.TabIndex = 14;
             btn_DeleteBook.Text = "Löschen";
             btn_DeleteBook.UseVisualStyleBackColor = true;
@@ -534,15 +572,15 @@
             textBox4.Size = new Size(400, 27);
             textBox4.TabIndex = 10;
             // 
-            // btn_AddBook
+            // btn_SaveBook
             // 
-            btn_AddBook.Location = new Point(8, 553);
-            btn_AddBook.Name = "btn_AddBook";
-            btn_AddBook.Size = new Size(400, 29);
-            btn_AddBook.TabIndex = 9;
-            btn_AddBook.Text = "Hinzufügen/Bearbeiten";
-            btn_AddBook.UseVisualStyleBackColor = true;
-            btn_AddBook.Click += btn_AddBook_Click;
+            btn_SaveBook.Location = new Point(282, 553);
+            btn_SaveBook.Name = "btn_SaveBook";
+            btn_SaveBook.Size = new Size(270, 29);
+            btn_SaveBook.TabIndex = 9;
+            btn_SaveBook.Text = "Speichern";
+            btn_SaveBook.UseVisualStyleBackColor = true;
+            btn_SaveBook.Click += btn_AddBook_Click;
             // 
             // label5
             // 
@@ -575,6 +613,16 @@
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(400, 27);
             txtISBN.TabIndex = 5;
+            // 
+            // btn_NewBook
+            // 
+            btn_NewBook.Location = new Point(8, 553);
+            btn_NewBook.Name = "btn_NewBook";
+            btn_NewBook.Size = new Size(270, 29);
+            btn_NewBook.TabIndex = 24;
+            btn_NewBook.Text = "Neuer Eintrag";
+            btn_NewBook.UseVisualStyleBackColor = true;
+            btn_NewBook.Click += btn_NewBook_Click;
             // 
             // Form1
             // 
@@ -620,14 +668,14 @@
         private Label label1;
         private TextBox txtLastName;
         private TextBox txtFirstName;
-        private Button btn_AddWriter;
+        private Button btn_SaveWriter;
         private Button btn_DeleteWriter;
         private Label label3;
         private Label label4;
         private TextBox textBox1;
         private TextBox txtGenres;
-        private Button btn_AddGenres;
-        private Button btn_AddBook;
+        private Button btn_SaveGenres;
+        private Button btn_SaveBook;
         private Label label5;
         private Label label6;
         private TextBox txtTitel;
@@ -653,12 +701,16 @@
         private Panel panel6;
         private DataGridView dataGridStock;
         private Button btn_DeleteStock;
-        private Button btn_AddStock;
+        private Button btn_SaveStock;
         private TextBox txtLevel;
         private Label label10;
         private Label label12;
         private TextBox txtPanel;
         private Label label11;
         private TextBox txtShelve;
+        private Button btn_NewWriter;
+        private Button btn_NewGenres;
+        private Button btn_NewStock;
+        private Button btn_NewBook;
     }
 }

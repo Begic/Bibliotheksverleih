@@ -15,47 +15,100 @@ namespace Bibliotheksverleih.Data.DataBase
 
         public void AddWriter(Writer writer)
         {
-            using (var con = new SqlConnection(connectionString))
+            if (writer.Id == null)
             {
-                var cmd = new SqlCommand("dbo.insertWriter", con);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("FName", writer.FirstName);
-                cmd.Parameters.AddWithValue("LName", writer.LastName);
-
-                try
+                using (var con = new SqlConnection(connectionString))
                 {
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                    var cmd = new SqlCommand("dbo.insertWriter", con);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("FName", writer.FirstName);
+                    cmd.Parameters.AddWithValue("LName", writer.LastName);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
-                catch (Exception e)
+            }
+            else
+            {
+                using (var con = new SqlConnection(connectionString))
                 {
-                    Console.WriteLine(e);
-                    throw;
+                    var cmd = new SqlCommand("dbo.updateWriter", con);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("WriterID", writer.Id);
+                    cmd.Parameters.AddWithValue("FName", writer.FirstName);
+                    cmd.Parameters.AddWithValue("LName", writer.LastName);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
             }
         }
 
         public void AddGenres(Genre genre)
         {
-            using (var con = new SqlConnection(connectionString))
+            if (genre.Id == null)
             {
-                var cmd = new SqlCommand("dbo.insertGenre", con);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Genre", genre.GenreName);
-
-                try
+                using (var con = new SqlConnection(connectionString))
                 {
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                    var cmd = new SqlCommand("dbo.insertGenre", con);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Genre", genre.GenreName);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
-                catch (Exception e)
+            }
+            else
+            {
+                using (var con = new SqlConnection(connectionString))
                 {
-                    Console.WriteLine(e);
-                    throw;
+                    var cmd = new SqlCommand("dbo.updateGenre", con);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@GenreID", genre.Id);
+                    cmd.Parameters.AddWithValue("@Genre", genre.GenreName);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
             }
         }
@@ -88,25 +141,53 @@ namespace Bibliotheksverleih.Data.DataBase
 
         public void AddStock(Stock stock)
         {
-            using (var con = new SqlConnection(connectionString))
+            if (stock.Id == null)
             {
-                var cmd = new SqlCommand("dbo.insertStock", con);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Level", stock.Level);
-                cmd.Parameters.AddWithValue("@Shelve", stock.Shelve);
-                cmd.Parameters.AddWithValue("@Panel", stock.Panel);
-
-                try
+                using (var con = new SqlConnection(connectionString))
                 {
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                    var cmd = new SqlCommand("dbo.insertStock", con);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Level", stock.Level);
+                    cmd.Parameters.AddWithValue("@Shelve", stock.Shelve);
+                    cmd.Parameters.AddWithValue("@Panel", stock.Panel);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
-                catch (Exception e)
+            }
+            else
+            {
+                using (var con = new SqlConnection(connectionString))
                 {
-                    Console.WriteLine(e);
-                    throw;
+                    var cmd = new SqlCommand("dbo.updateStock", con);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@StockID", stock.Id);
+                    cmd.Parameters.AddWithValue("@Level", stock.Level);
+                    cmd.Parameters.AddWithValue("@Shelve", stock.Shelve);
+                    cmd.Parameters.AddWithValue("@Panel", stock.Panel);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
             }
         }
